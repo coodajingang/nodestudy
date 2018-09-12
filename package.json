@@ -11,5 +11,8 @@
     "study"
   ],
   "author": "dtx",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.8.0"
+  }
 }
