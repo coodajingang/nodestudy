@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 
 puppeteer.launch({headless:false,devtools: true}).then(async browser => {
     var page = await browser.newPage()
-
+    
     page.on("framenavigated", msg => {
         console.log("Event Framenavigated !")
     });
