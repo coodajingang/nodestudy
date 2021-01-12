@@ -837,11 +837,11 @@ function showMessD(n){ //显时本月第n日的摘要信息。调用前应先执
 **********************/
 function getLunar(){ //月历页面生成
 
-  var By  = year2Ayear(Cal_y.value);
-  var Bm  = Cal_m.value-0;
+  var By  = year2Ayear(Cal_y.value); // 转换为正负数 公元前后 
+  var Bm  = Cal_m.value-0; // 获取月份值  
   if(By == -10000) return;
 
-  if(!lun.dn || lun.y!=By || lun.m!=Bm){  //月历未计算
+  if(!lun.dn || lun.y!=By || lun.m!=Bm){  //月历未计算 dn-天 y-年 m-月
    lun.yueLiHTML(By,Bm,curJD);
    Cal2.innerHTML = lun.pg1;
    Cal4.innerHTML = lun.pg2;
