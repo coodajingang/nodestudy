@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            position: relative;
+            width: 960px;
+            height: 460px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+        .pic {
+            width: 100%;
+            height: 100%;
+        }
+        .pic img {
+            width: 100%;
+            height: 100%;
+        }
+        .box .left, .box .right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-18px);
+            width: 36px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.3);
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+        .box .left {
+            left: 0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .box .right {
+            right: 0;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .box .left:hover, .box .right:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+        }
+        .dots li {
+            float: left;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 4px;
+        }
+        .dots2 {
+            position: absolute;
+            bottom: 50px;
+            /* 绝对定位居中算法：当使用left时需要配合使用margin-left调整，如果使用了margin-right则不生效 */
+            right: 50%;
+            margin-right: -60px;
+            width: 120px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pic">
+            <a href="#"><img src="images/note.jpg" alt=""></a>
+        </div>
+        <div class="left"><a href="#"></a>&lt;</a></div>
+        <div class="right"><a href="#"></a>&gt;</a></div>
+        <ul class="dots">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+        <ul class="dots2"></ul>
+    </div>
+    <!-- 教程中的结构更简单  -->
+    <div class="box1">
+        <img src="" alt="">
+        <a href="#"> &lt; </a>
+        <a href="#"> &gt; </a>
+        <ul class="dots3">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

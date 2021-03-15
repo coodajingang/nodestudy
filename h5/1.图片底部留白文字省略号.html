@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* width: 600px;
+            height: 396px; */
+            border: 1px solid red;
+        }
+        .box img {
+            /* vertical-align: middle top bottom ; */
+            /* 将img转换为块级元素也可以解决底部空白 */
+            vertical-align: middle;
+        }
+        .single {
+            width: 100px;
+            height: 100px;
+            background-color: pink; 
+            /* 文字一行显示;溢出hidden；文字溢出时显示省略号 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .mutiline {
+            width: 100px;
+            height: 100px;
+            background-color: powderblue;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            /* 多行显示省略号 */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/qwa.jpg" alt=""><span>pPink</span>
+    </div>
+    <div class="single">
+        单行文字的省略号问题单行文字的省略号问题单行文字的省略号问题
+    </div>
+    <div class="mutiline">
+        多行文字的省略号问题多行文字的省略号问题多行文字的省略号问题
+    </div>
+</body>
+</html>

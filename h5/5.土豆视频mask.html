@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 376px;
+            height: 210px;
+            margin: 10px auto;
+        }
+        .box img {
+            width: 100%;
+        }
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 376px;
+            height: 210px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .box:hover .mask {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="mask"></div>
+        <img src="images/xwlb.jpg" alt="">
+    </div>
+    <div class="box">
+        <div class="mask"></div>
+        <img src="images/xwlb.jpg" alt="">
+    </div>
+</body>
+</html>
