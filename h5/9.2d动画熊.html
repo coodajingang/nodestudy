@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1600px 0;
+            }
+        }
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .bear,.bear2 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            background: url(media/bear.png) no-repeat;
+            /* animation: bear 2s linear infinite; 使用匀速无限循环进行动画 */
+            animation: bear 1s steps(8) infinite;
+        }
+        .box2 {
+            position: absolute;
+            top: 250px;
+            left: 0;
+            animation: move 2s forwards;
+        }
+        
+        .box3 {
+            position: relative;
+            height: 120px;
+        }
+        .bear3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            background: url(media/bear.png) no-repeat;
+            /* animation: bear 2s linear infinite; 使用匀速无限循环进行动画 */
+            animation: bear 1s steps(8) infinite, move 2s forwards;
+        }
+        /* 背景图动画 */ 
+        .box4 {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+        .bg1 {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(media/bg1.png) no-repeat;
+            animation: bgmove 30s linear infinite;
+        }
+        .bg2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(media/bg2.png) no-repeat;
+            animation: bgmove 30s linear infinite;
+        }
+        @keyframes bgmove {
+            0% {
+                background-position: 0 0 ;
+            }
+            100% {
+                background-position: -2540px 0 ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>通过背景图变换制作奔跑的熊</h2>
+    <div class="box1">
+        <div class="bear"></div>
+    </div>
+    <hr>
+    <h2 style="margin-bottom: 130px;">父盒子往前进</h2>
+    <div class="box2">
+        <div class="bear2"></div>
+    </div>
+    <hr>
+    <h2>奔跑熊自己往前进</h2>
+    <div class="box3">
+        <div class="bear3"></div>
+    </div>
+    <hr>
+    <h2>背景图的动画</h2>
+    <div class="box4">
+        <div class="bg2"></div>
+        <div class="bg1"></div>
+    </div>
+</body>
+</html>

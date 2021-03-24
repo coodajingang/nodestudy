@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .t1 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 0 auto;
+            transition: all 1s;
+            /* transform-origin: bottom left; 修改scale的原点 */
+        }
+        .t1:hover {
+            /* 1. 使用width 和hight进行缩放是以top和center为点进行扩展，不能修改这个扩展点而且会造成后续盒子的布局更改 */
+            /* width: 300px;
+            height: 300px; */
+            /* 2. 使用scale是根据center和center为点进行缩放，1为不缩放；大于1放大；小于1缩小 */
+            /* transform: scale(.2); */
+            /* 3. 使用scaleX scaleY 进行单轴上的缩放 */
+            /* transform: scaleX(2) scaleY(.5); */
+            /* 4. 使用translateX translateY 进行位置移动 */
+            /* transform: translateX(200px) translateY(100px); */
+            /* 5.效果同上 */
+            /* transform:  translateY(100px) translateX(200px);  */
+            transform: rotateZ(45deg);
+        }
+        .t2 {
+            width: 100%;
+            height: 200px;
+            border: 1px solid royalblue;
+            margin: 0 auto;
+            perspective: 200px;
+        }
+        .t2 div[class^="d"] {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            margin-right: 10px;
+            transition: all 2s;
+        }
+        .d1:hover {
+            transform: rotateX(45deg);
+        }
+        .d2:hover {
+            transform: rotateY(90deg);
+        }
+        .d3:hover {
+            transform: rotateZ(45deg);
+        }
+        .d4:hover {
+            transform: skewX(45deg);
+        }
+        .d5:hover {
+            transform: translateZ(100px);
+        }
+        .d6:hover {
+            transform: translateZ(-100px);
+        }
+        .d7:hover {
+            transform: scale3d(2,2,2);
+        }
+        .d8:hover {
+            transform: translate3d(50px,30px, 100px);
+        }
+        .t3p {
+            perspective: 300px;
+        }
+        .t3 {
+            position: relative;
+            border: 1px solid red;
+            height: 300px;
+            transform-style: preserve-3d;
+            transition: all 2s;
+        }
+        .t3:hover {
+            transform: rotateY(80deg);
+        }
+        .t3 div {
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .t31 {
+            background-color: pink;
+            transform: rotateX(90deg);
+        }
+        .t32 {
+            background-color: skyblue;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>2D的缩放、移动、旋转</h2>
+    <div class="t1">鼠标经过扩大</div>
+    <h2>3D的演示</h2>
+    <div class="t2">
+        <div class="d1">rotateX(45deg)</div>
+        <div class="d2">rotateY(90deg)</div>
+        <div class="d3">rotateZ(45deg)</div>
+        <div class="d4">skewX(45deg)</div>
+        <div class="d5"> translateZ(100px)</div>
+        <div class="d6">translateZ(-100px)</div>
+        <div class="d7">scale3d(2,2,2)</div>
+        <div class="d8">translate3d(50px,30px, 100px)</div> 
+    </div>
+    <h2>多盒子3D transform-style: preserve-3d</h2>
+    <div class="t3p">
+        <div class="t3">
+            <div class="t31"></div>
+            <div class="t32"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .logo {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            background-color: #ff6700;
+        }
+        /* 伪元素before after 要添加宽高，默认为0 */
+        .logo::before {
+            content: '';
+            background: url(images/mi-logo.png) no-repeat 50% 50%;
+            opacity: 1;
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: all .2s;
+        }
+        .logo::after {
+            content: '';
+            background: url(images/mi-home.png) no-repeat 50% 50%;
+            opacity: 0;
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            margin-left: -55px;
+            transition: all .2s;
+        }
+        .logo:hover::before {
+            opacity: 0;
+        }
+        .logo:hover::after {
+            opacity: 1;
+            transform: translateX(55px);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0 50px;
+        }
+        .t1 {
+            width: 0;
+            height: 0;
+            border-top: 20px solid red;
+            border-bottom: 20px solid blue;
+            border-left: 20px solid pink;
+            border-right: 20px solid green;
+        }
+        .t2 {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 20px solid transparent;
+            border-right: 20px solid green;
+        }
+        .t3 span {
+            float: left;
+            width: 90px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border: 1px solid red;
+        }
+        .t3 span:first-child {
+            position: relative;
+            background: red;
+            color: white;
+        }
+        .t3 span:last-child {
+            color: #ccc;
+            font-size: 12px;
+            text-decoration: line-through;
+        }
+        .t3 span:first-child::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 0;
+            height: 0;
+            border-left: 0px solid transparent;
+            border-top: 24px solid transparent;
+            border-right: 8px solid white;
+            border-bottom: 0px solid transparent;
+        }
+        .t3::after {
+            content: '';
+            display: block;
+            clear: both;
+            overflow: hidden;
+        }
+        .t4 {
+            width: 0;
+            height: 0;
+            border-color: blue red green yellow; 
+            border-style: solid;
+            border-width: 22px 8px 0 0;
+        }
+        .t5 {
+            width: 0;
+            height: 0;
+            border-color: blue red green yellow; 
+            border-style: solid;
+            border-width: 0 0 22px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="t1"></div>
+    <div class="t2"></div>
+    <div class="t3">
+        <span>$400</span><span>$4000</span>
+    </div>
+    <div class="t4"></div>
+    <div class="t5"></div>
+</body>
+</html>
