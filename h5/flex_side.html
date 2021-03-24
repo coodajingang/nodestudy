@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0 20px;
+    }
+    header, footer{
+      width: 100%;
+      height: 54px;
+      background-color: rgba(0, 0, 0, .3);
+    } 
+    header a {
+      text-decoration: none;
+      line-height: 54px;
+      color: blue;
+    }
+    .content {
+      display: flex;
+      width: 100%;
+      border: 1px solid red;
+    }
+    .side{
+      height: 200px;
+      border: 2px solid blue;
+      /* flex: 1; */
+      min-width: 21%;
+      max-width: 48%;
+      width: 21%;
+      margin-left: 10px;
+      display: block;
+      resize: horizontal;
+      overflow: auto;
+      position: relative;
+    }
+    .main {
+      height: 500px;
+      width: 100%;
+      border: 2px solid green;
+      /* flex: 5; */
+      margin-right: 10px;
+      transition: all 2s;
+    }
+    .side .resize-line {
+      height: inherit;
+      width: 5px;
+      border-right: 5px solid red;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: ew-resize;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" onclick="toggleAside()">点我</a>
+  </header>
+  <div class="content">
+    <div class="side" id="side">
+      <p>sideType errors will show up in the same console as the build one. You'll have to fix these type errors before you continue development or build your project. For advanced configuration</p>
+      <div class="resize-line"></div>
+    </div>
+    <div class="main">mainType errors will show up in the same console as the build one. You'll have to fix these type errors before you continue development or build your project. For advanced configurationType errors will show up in the same console as the build one. You'll have to fix these type errors before you continue development or build your project. For advanced configuration</div>
+  </div>
+  <footer>footer</footer>
+</body>
+<script>
+  function toggleAside() {
+    var val = document.getElementById("side").style.display;
+    console.log(val)
+    if (!val || val === 'block') {
+      document.getElementById("side").style.display = 'none'
+    } else {
+      document.getElementById("side").style.display= 'block'
+    }
+  }
+</script>
+</html>
