@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .column {
+      overflow: hidden;
+    }
+    .column-left {
+      float: left;
+      position: relative;
+      height: 400px;
+      background-color: green;
+    }
+    .column-right {
+      overflow: hidden;
+      height: 400px;
+      padding: 16px;
+      background-color: #eee;
+    }
+    .resize-bar {
+      width: 200px;
+      height: inherit;
+      resize: horizontal;
+      cursor: ew-resize;
+      opacity: 0;
+      overflow: scroll;
+      max-width: 500px;
+      min-width: 200px;
+    }
+    .resize-line {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 2px solid #eee;
+      border-left: 1px solid #bbb;
+      pointer-events: none;
+    }
+    .resize-bar:hover ~ .resize-line,
+    .resize-bar:active ~ .resize-line {
+      border-left: 1px dashed skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="column">
+    <div class="column-left">
+      <p class="resize-bar"></p>
+      <p class="resize-line"></p>
+      <p class="resize-save">Left content</p>
+    </div>
+    <div class="coumn-right">
+      Right content
+    </div>
+  </div>
+</body>
+</html>

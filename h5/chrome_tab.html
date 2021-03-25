@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    body {
+      background: url(images/chromebg.jpg) no-repeat ;
+      background-size: 100%;
+      height: 100%;
+      font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
+    }
+    header {
+      /* position: fixed; */
+      top: 0;
+      background-color:transparent;
+      width: 100%;
+      height: 48px;
+      line-height: 48px;
+    }
+    header .open {
+      margin-left: 20px;
+      float: left;
+      color: #fff;
+    }
+    header::after {
+      content: '';
+      clear: both;
+      overflow: hidden;
+    }
+    header ul li {
+      float: right;
+      height: 48px;
+      margin-right: 15px;
+    } 
+    header ul li a {
+      color: #fff;
+    }
+    header ul li a:hover {
+      text-decoration-line: underline;
+    } 
+    header .open:hover aside{
+      display: block;
+    }
+    aside {
+      display: none;
+      width: 20%;
+      height: 500px;
+      background-color: skyblue;
+      border: 1px solid red;
+    }
+    .baner {
+      width: 491px;
+      height: 200px;
+      border: 1px solid skyblue;
+      margin: 100px auto;
+      border-radius: 15px;
+    }
+    .search {
+      width: 491px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .search input {
+      width: 100%;
+      height: 44px;
+      border: none;
+      border-radius: 22px;
+      padding: 0 20px;
+    }
+
+    .search input:focus {
+      outline: none;
+    }
+    .nav {
+      width: 491px;
+      height: 200px;
+      margin: 0 auto;
+    }
+    .nav ul {
+      display: flex;
+    }
+    .nav ul li {
+      flex: 1;
+      width: 100px;
+      height: 90px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="open" href="#" onclick="toggleAside()">open</a>
+    <ul>
+      <li><a href="#">zhong</a></li>
+      <li><a href="#">Apps</a></li>
+      <li><a href="#">Images</a></li>
+      <li><a href="#">Gmail</a></li>
+    </ul>
+  </header>
+  <aside id="side">Side box</aside>
+  <div class="baner"></div>
+  <div class="search"><input type="text" placeholder="google search"></div> 
+  <nav>
+    <ul>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+      <li><a href="#">x</a></li>
+    </ul>
+  </nav>
+</body>
+<script>
+  function toggleAside() {
+    console.log("too");
+    var value = document.getElementById("side").style.display;
+    console.log(value);
+    if (value == 'block') {
+      document.getElementById("side").style.display="none";
+    } else {
+      document.getElementById("side").style.display="block";
+    }
+    
+  }
+</script>
+</html>
