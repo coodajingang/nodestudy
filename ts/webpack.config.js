@@ -12,7 +12,11 @@ module.exports = {
     // 定义输出文件
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        // webpack 打包时是否使用箭头函数
+        environment: {
+            arrowFunction: false
+        }
     },
     resolve: { // 用于配置将ts结尾的文件解析为module
         extensions: [".ts", ".js", ".tsx"]
@@ -20,7 +24,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 use: [
                     {
                         loader: "babel-loader",
