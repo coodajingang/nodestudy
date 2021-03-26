@@ -75,7 +75,26 @@ npm install -D webpack webpack-cli typescript ts-loader clean-webpack-plugin htm
 ```
 然后拷贝配置文件tsconfig.json, webpack.config.js内容即可
 
-## 高级配置 
+# 高级配置 
 1. 单元测试/mock
 2. sourcemap 
 3. 构建优化 
+4. 生产开发测试环境区分打包 
+
+## 开发环境、生产环境区分打包 
+`npm install -D webpack-merge`  
+`npm install -D uglifyjs-webpack-plugin`
+然后删除 webpack.config.js ， 新增webpack.common.js、 webpack.dev.js、 webpack.product.js 文件 
+修改脚本： 
+```
+-     "start": "webpack-dev-server --open",
++     "start": "webpack-dev-server --open --config webpack.dev.js",
+-     "build": "webpack"
++     "build": "webpack --config webpack.prod.js"
+```
+tsconfig.json 中开启sourcemap: `"sourceMap": true,` 
+package.json中修改脚本： 
+```
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --config webpack.dev.js --open  "
+```
