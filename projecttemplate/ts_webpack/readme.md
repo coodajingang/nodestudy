@@ -98,3 +98,7 @@ package.json中修改脚本：
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --config webpack.dev.js --open  "
 ```
+
+## 单元测试环境 jest 
+`npm i -D jest @types/jest ts-jest` 
+创建配置文件 jest.config.js 
