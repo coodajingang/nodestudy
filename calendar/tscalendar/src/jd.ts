@@ -26,20 +26,22 @@ export class Jd {
         this.dt = dt;
     }
 
-    getJD(): number | undefined {
+    getJD(): number {
         if (this.dt.jd) return this.dt.jd;
         this.date2Jd();
-        return this.dt.jd;
+        if (this.dt.jd) return this.dt.jd;
+        throw new Error("When calc jd erorr!");
     }
     getDD(): DateTime {
         if (this.dt.year && this.dt.month && this.dt.day) return this.dt;
         this.jd2Date();
         return this.dt;
     }
-    getWeek(): Week | undefined {
+    getWeek(): Week {
         if (this.dt.week) return this.dt.week;
         this.calculateWeek();
-        return this.dt.week;
+        if (this.dt.week) return this.dt.week;
+        throw new Error("When calc week error!");
     }
     getTimeStr(): string {
         if (!this.dt.year || !this.dt.month || !this.dt.day) {
