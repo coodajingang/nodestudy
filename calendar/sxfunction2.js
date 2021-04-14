@@ -811,16 +811,16 @@ function showMessD(n){ //显时本月第n日的摘要信息。调用前应先执
   obb.mingLiBaZi( ob.d0+curTZ/24, J, ob ); //命理纳音计算,jd为格林尼治UT(J2000起算),J为本地经度,返回在物件ob中
 
   s  = Ayear2year(ob.y) + '年' + ob.m + '月' + ob.d + '日<br/>'
-  s += ob.Lyear4+'年 星期' + JD.Weeks[ob.week] + ' ' + ob.XiZ +'<br/>';
-  s += ob.Lyear3+'年 '+ob.Lleap + ob.Lmc + '月' + (ob.Ldn>29?'大 ':'小 ') + ob.Ldc + '日<br/>';
-  s += ob.Lyear2+'年 '+ob.Lmonth2+'月 '+ob.Lday2+'日<br/>';
-  s += ob.bz_jnny+' '+ob.bz_jyny+' '+ob.bz_jrny+'<br/>';
+  s += ob.Lyear4+'年 星期' + JD.Weeks[ob.week] + ' ' + ob.XiZ +'<br/>'; // 
+  s += ob.Lyear3+'年 '+ob.Lleap + ob.Lmc + '月' + (ob.Ldn>29?'大 ':'小 ') + ob.Ldc + '日<br/>'; // 农历
+  s += ob.Lyear2+'年 '+ob.Lmonth2+'月 '+ob.Lday2+'日<br/>'; // 干支历
+  s += ob.bz_jnny+' '+ob.bz_jyny+' '+ob.bz_jrny+'<br/>'; // 纳音
   s += '回历['+ob.Hyear+'年'+ob.Hmonth+'月'+ob.Hday+'日]<br/>';
   s += 'JD '+(ob.d0+J2000)+'('+ob.d0+')<br/>';
-  if(ob.yxmc) s += ob.yxmc+' '+ob.yxsj+'<br/>';
-  if(ob.jqmc) s += '定'+ob.jqmc+' '+ob.jqsj+'<br/>';
+  if(ob.yxmc) s += ob.yxmc+' '+ob.yxsj+'<br/>'; // 月相名称 月相时间
+  if(ob.jqmc) s += '定'+ob.jqmc+' '+ob.jqsj+'<br/>'; // 节气名称 节气时间 
   //else { if(ob.Ljq) s += ob.Ljq+'<br/>';}
-  if(ob.Ljq) s += '<br/>'+ob.dtpq+' ';//ob.dtpq明大统历平气交节时刻ob.Ljq实气
+  if(ob.Ljq) s += '<br/>'+ob.dtpq+' ';//ob.dtpq明大统历平气交节时刻ob.Ljq实气  
 
   if(ob.A)    s += ob.A +'<br>';
   if(ob.B)    s += ob.B +'<br>';

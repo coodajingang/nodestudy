@@ -1309,8 +1309,8 @@ function hxCalc(t, F, Q, lx, L, fa) {
       if (xm == 10 || xm == 2) r.H2 = this.getH(-6 * 3600 / rad, z[1]);
       if (xm == 10 || xm == 3) r.H3 = this.getH(-12 * 3600 / rad, z[1]);
       if (xm == 10 || xm == 4) r.H4 = this.getH(-18 * 3600 / rad, z[1]);
-    }, St:
-    function (jd) {
+    }, 
+    St: function (jd) {
       this.dt = dt_T(jd);
       this.E = hcjj(jd / 36525);
       jd -= mod2(jd + this.L / pi2, 1);
@@ -1357,22 +1357,19 @@ function hxCalc(t, F, Q, lx, L, fa) {
       this.Scoord(r.x, 0, r);
       r.x += rad2rrad(Math.PI - r.H) / sv;
       return r;
-    }, rts: new Array(), calcRTS:
-    function (jd, n, Jdl, Wdl, sq) {
+    }, 
+    rts: new Array(), 
+    calcRTS: function (jd, n, Jdl, Wdl, sq) {
       var i, c, r;
       if (!this.rts.length) {
-        for (i = 0;
-          i < 31;
-          i++)this.rts[i] = new Array();
-      } this.L = Jdl, this.fa = Wdl, sq /= 24;
-      for (i = 0;
-        i < n;
-        i++) {
-          r = this.rts[i];
+        for (i = 0; i < 31; i++)this.rts[i] = new Array();
+      } 
+      this.L = Jdl, this.fa = Wdl, sq /= 24;
+      for (i = 0; i < n; i++) {
+        r = this.rts[i];
         r.Ms = r.Mz = r.Mj = "--:--:--";
-      } for (i = -1;
-        i <= n;
-        i++) {
+      } 
+      for (i = -1; i <= n; i++) {
           if (i >= 0 && i < n) {
             r = SZJ.St(jd + i + sq);
             this.rts[i].s = JD.timeStr(r.s - sq);
@@ -1382,7 +1379,8 @@ function hxCalc(t, F, Q, lx, L, fa) {
             this.rts[i].h = JD.timeStr(r.h - sq);
             this.rts[i].ch = JD.timeStr(r.h - r.c - 0.5);
             this.rts[i].sj = JD.timeStr(r.j - r.s - 0.5);
-          } r = SZJ.Mt(jd + i + sq);
+          } 
+        r = SZJ.Mt(jd + i + sq);
         c = int2(r.s - sq + 0.5) - jd;
         if (c >= 0 && c < n) this.rts[c].Ms = JD.timeStr(r.s - sq);
         c = int2(r.z - sq + 0.5) - jd;
@@ -2810,8 +2808,8 @@ var obb = {
       jd += 13 / 24;
       var D = Math.floor(jd), SC = int2((jd - D) * 12);
       v = int2(k / 12 + 6000000);
-      ob.bz_jn = this.Gan[v % 10] + this.Zhi[v % 12];
-      ob.bz_jnny = this.gzny[Math.round((((60 + (v + 1) % 60) % 60) / 2), 0)];
+      ob.bz_jn = this.Gan[v % 10] + this.Zhi[v % 12]; // 干支
+      ob.bz_jnny = this.gzny[Math.round((((60 + (v + 1) % 60) % 60) / 2), 0)]; // 纳音
       v = k + 2 + 60000000;
       ob.bz_jy = this.Gan[v % 10] + this.Zhi[v % 12];
       ob.bz_jyny = this.gzny[Math.round((((60 + (v + 1) % 60) % 60) / 2), 0)];
