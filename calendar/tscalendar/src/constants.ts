@@ -11,4 +11,6 @@ export const rmc = new Array('初一', '初二', '初三', '初四', '初五', '
 export const gzny = new Array("大海水", "海中金", "炉中火", "大林木", "路旁土", "剑锋金", "山头火", "洞下水", "城墙土", "白腊金", "杨柳木", "泉中水", "屋上土", "霹雷火", "松柏木", "常流水", "沙中金", "山下火", "平地木", "壁上土", "金箔金", "佛灯火", "天河水", "大驿土", "钗钏金", "桑松木", "大溪水", "沙中土", "天上火", "石榴木", "大海水");
 export const scd = new Array('正', '初');
 export const TimeK = new Array('初', '一', '二', '三', '四');
-export const jqjl = new Array('中', '节');
+export const jqjl = new Array('中', '节'); 
+
+export const J2000 = 2451545;

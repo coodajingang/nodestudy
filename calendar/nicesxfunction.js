@@ -3244,11 +3244,11 @@ function Lunar() {
         if (ob.d0 == curJD) c2 = '<span' + sty_cur + '>' + c2 + '</span>';
         cr += '<td' + sty_body + 'width="14%">' + c2 + '<br>' + isM + c + '</td>';
         if (i == this.dn - 1) {
-          for (j = 0;
-            j < 6 - ob.week;
-            j++)cr += '<td' + sty_body + '></td>';
-        } if (i == this.dn - 1 || ob.week == 6) ta0 += '<tr>' + cr + '</tr>', cr = "";
-      } this.pg1 = '<table border=0 cellpadding=3 cellspacing=1 width="100%">' + ta0 + '</table>';
+          for (j = 0; j < 6 - ob.week; j++) cr += '<td' + sty_body + '></td>';
+        } 
+        if (i == this.dn - 1 || ob.week == 6) ta0 += '<tr>' + cr + '</tr>', cr = "";
+      } 
+      this.pg1 = '<table border=0 cellpadding=3 cellspacing=1 width="100%">' + ta0 + '</table>';
       var b2 = '', b3 = '', b4 = '';
       for (i = 0;i < this.dn;i++) {
         ob = this.lun[i];
