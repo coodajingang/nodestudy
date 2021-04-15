@@ -1,7 +1,7 @@
 import { int2 } from "./math";
 import { XL } from "./xl";
 import { dt_T } from "./dt";
-import { ymc } from "./constants";
+import { Ymc } from "./constants";
 
 const suoS = "EqoFscDcrFpmEsF2DfFideFelFpFfFfFiaipqti1ksttikptikqckstekqttgkqttgkqteksttikptikq2fjstgjqttjkqttgkqt"
     + "ekstfkptikq2tijstgjiFkirFsAeACoFsiDaDiADc1AFbBfgdfikijFifegF1FhaikgFag1E2btaieeibggiffdeigFfqDfaiBkF"
@@ -69,6 +69,9 @@ const suoKB = new Array(1457698.231017, 29.53067166, 1546082.512234, 29.53085106
 const qiKB = new Array(1640650.479938, 15.21842500, 1642476.703182, 15.21874996, 1683430.515601, 15.218750011, 1752157.640664, 15.218749978, 1807675.003759, 15.218620279, 1883627.765182, 15.218612292, 1907369.128100, 15.218449176, 1936603.140413, 15.218425000, 1939145.524180, 15.218466998, 1947180.798300, 15.218524844, 1964362.041824, 15.218533526, 1987372.340971, 15.218513908, 1999653.819126, 15.218530782, 2007445.469786, 15.218535181, 2021324.917146, 15.218526248, 2047257.232342, 15.218519654, 2070282.898213, 15.218425000, 2073204.872850, 15.218515221, 2080144.500926, 15.218530782, 2086703.688963, 15.218523776, 2110033.182763, 15.218425000, 2111190.300888, 15.218425000, 2113731.271005, 15.218515671, 2120670.840263, 15.218425000, 2123973.309063, 15.218425000, 2125068.997336, 15.218477932, 2136026.312633, 15.218472436, 2156099.495538, 15.218425000, 2159021.324663, 15.218425000, 2162308.575254, 15.218461742, 2178485.706538, 15.218425000, 2178759.662849, 15.218445786, 2185334.020800, 15.218425000, 2187525.481425, 15.218425000, 2188621.191481, 15.218437494, 2322147.76);
 
 const J2000 = 2451545;
+const SB_JIEYA = jieya(suoS);
+const QB_JIEYA = jieya(qiS);
+
 
 export class SSQ {
     SB = "";
@@ -84,10 +87,36 @@ export class SSQ {
     pe2: number = 0;
 
     constructor() {
-        this.SB = jieya(suoS);
-        this.QB = jieya(qiS);
+        this.SB = SB_JIEYA;
+        this.QB = QB_JIEYA;
     }
-
+    getLeap() {
+        return this.leap;
+    }
+    getYm() {
+        return this.ym;
+    }
+    getYmStr() {
+        return this.ymStr;
+    }
+    getZQ() {
+        return this.ZQ;
+    }
+    getHS() {
+        return this.HS;
+    }
+    getDx() {
+        return this.dx;
+    }
+    getYn() {
+        return this.Yn;
+    }
+    getPe1() {
+        return this.pe1;
+    }
+    getPe2() {
+        return this.pe2;
+    }
     calc(jd: number, qs: string): number {
         jd += 2451545;
         let i = 0, D = 0, n = "";
@@ -152,7 +181,7 @@ export class SSQ {
                 f1 = int2((this.HS[i] - ns[nn] + 15) / 29.5306);
                 if (f1 < 12) {
                     this.ym[i] = (f1 + ns[nn + 6]) % 12;
-                    this.ymStr[i] = ymc[(f1 + ns[nn + 6]) % 12];
+                    this.ymStr[i] = Ymc[(f1 + ns[nn + 6]) % 12];
                 }
                 else this.ym[i] = ns[nn + 3];
             }
@@ -165,10 +194,10 @@ export class SSQ {
         }
         for (i = 0; i < 14; i++) {
             let Dm = this.HS[i] + J2000, v2 = this.ym[i];
-            let mc = ymc[v2 % 12];
-            if (Dm >= 1724360 && Dm <= 1729794) mc = ymc[(v2 + 1) % 12];
-            else if (Dm >= 1807724 && Dm <= 1808699) mc = ymc[(v2 + 1) % 12];
-            else if (Dm >= 1999349 && Dm <= 1999467) mc = ymc[(v2 + 2) % 12];
+            let mc = Ymc[v2 % 12];
+            if (Dm >= 1724360 && Dm <= 1729794) mc = Ymc[(v2 + 1) % 12];
+            else if (Dm >= 1807724 && Dm <= 1808699) mc = Ymc[(v2 + 1) % 12];
+            else if (Dm >= 1999349 && Dm <= 1999467) mc = Ymc[(v2 + 2) % 12];
             else if (Dm >= 1973067 && Dm <= 1977052) {
                 if (v2 % 12 == 0) mc = "正";
                 if (v2 == 2) mc = '一';
