@@ -1,0 +1,29 @@
+.pp {
+  background: #ff0d;
+}
+
+.box {
+  width: 45px;
+  height: 45px;
+  background: #ddd;
+}
+
+.selectBox {
+  box-sizing: border-box;
+  width: 100px;
+  height: 48px;
+  border: 1px solid red;
+  display: flex;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+}
+
+.item:hover,
+.item:focus {
+  background: burlywood;
+}

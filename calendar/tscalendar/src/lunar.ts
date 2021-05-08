@@ -244,7 +244,8 @@ export class Lunar {
           ob.jqmc = Jqmc[xn];
           ob.jqjd = "" + d;
           ob.jqsj = this.timeStr(d);
-        } while (D + 12 < Bd0 + Bdn);
+        } 
+        while (D + 12 < Bd0 + Bdn);
       }
 
       private Dtlpq(pjqn: number, By: number, Bm: number) {
